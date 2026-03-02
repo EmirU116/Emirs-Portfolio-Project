@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "new-post": "node scripts/new-post.js"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,11 @@
   },
   "homepage": "https://github.com/EmirU116/Emirs-Portfolio-Project#readme",
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "next": "^16.1.6",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
   }
 }

@@ -5,11 +5,12 @@ import Link from 'next/link';
 import styles from './Navigation.module.css';
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#about', label: 'About', type: 'anchor' },
+  { href: '#experience', label: 'Experience', type: 'anchor' },
+  { href: '#projects', label: 'Projects', type: 'anchor' },
+  { href: '#skills', label: 'Skills', type: 'anchor' },
+  { href: '#contact', label: 'Contact', type: 'anchor' },
+  { href: '/blog', label: 'Blog', type: 'route' },
 ];
 
 export default function Navigation() {
@@ -21,7 +22,7 @@ export default function Navigation() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = navLinks.map((l) => l.href.slice(1));
+      const sections = navLinks.filter((l) => l.type === 'anchor').map((l) => l.href.slice(1));
       let current = '';
       for (const id of sections) {
         const el = document.getElementById(id);
@@ -58,15 +59,25 @@ export default function Navigation() {
         </button>
 
         <ul className={`${styles.navLinks} ${menuOpen ? styles.menuOpen : ''}`}>
-          {navLinks.map(({ href, label }) => (
+          {navLinks.map(({ href, label, type }) => (
             <li key={href}>
-              <a
-                href={href}
-                className={`${styles.navLink} ${activeSection === href.slice(1) ? styles.active : ''}`}
-                onClick={() => setMenuOpen(false)}
-              >
-                {label}
-              </a>
+              {type === 'route' ? (
+                <Link
+                  href={href}
+                  className={styles.navLink}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {label}
+                </Link>
+              ) : (
+                <a
+                  href={href}
+                  className={`${styles.navLink} ${activeSection === href.slice(1) ? styles.active : ''}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {label}
+                </a>
+              )}
             </li>
           ))}
           <li>

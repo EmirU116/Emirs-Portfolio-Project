@@ -20,29 +20,6 @@ const experiences = [
       'Acted as the sole web developer, collaborating with UI/UX designers and stakeholders under production timelines',
     ],
   },
-  {
-    id: 2,
-    role: 'Postal & Logistics Operations',
-    company: 'Stockholm University',
-    period: '2024 – Present',
-    type: 'ops',
-    bullets: [
-      'Managed incoming and outgoing goods registration systems',
-      'Assisted departments in tracking deliveries and resolving logistical issues',
-      'Maintained accuracy and accountability in high-volume operational workflows',
-    ],
-  },
-  {
-    id: 3,
-    role: 'Facilities Operations',
-    company: 'Stockholm University',
-    period: '2019–2020, 2024 – Present',
-    type: 'ops',
-    bullets: [
-      'Worked independently and in teams in high-traffic environments',
-      'Demonstrated reliability and responsibility in structured operational settings',
-    ],
-  },
 ];
 
 const education = [
