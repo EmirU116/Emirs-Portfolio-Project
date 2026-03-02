@@ -1,38 +1,126 @@
 .about {
-  background-color: var(--primary-color);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  background: var(--bg-primary);
+}
+
+.about.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.label {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
 }
 
 .title {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--accent-color);
+  font-weight: 800;
+  color: var(--text-light);
   text-align: center;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.5rem;
 }
 
 .content {
   display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.text strong {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.quickInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding-top: 0.5rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.infoItem a {
+  color: var(--accent-color);
+}
+
+.infoIcon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Stats grid */
+.stats {
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
+  gap: 1rem;
 }
 
-.content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #cbd5e1;
+.stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
-@media (max-width: 768px) {
-  .about {
-    padding: 60px 20px !important;
+.stat:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+}
+
+.statValue {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.5px;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
+}
 
+@media (max-width: 600px) {
   .title {
     font-size: 2rem;
   }
-
-  .content {
-    grid-template-columns: 1fr;
+  .stats {
+    grid-template-columns: 1fr 1fr;
   }
 }

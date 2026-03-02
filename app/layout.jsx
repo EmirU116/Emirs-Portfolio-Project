@@ -2,8 +2,9 @@ import './globals.css';
 import Navigation from '@/components/Navigation';
 
 export const metadata = {
-  title: 'My Portfolio',
-  description: 'Personal portfolio showcasing my projects and skills',
+  title: 'Emir Ulusoy — Software Developer',
+  description:
+    'Software Developer with a background in game programming, backend development, cloud infrastructure, and CI/CD automation. Based in Stockholm.',
 };
 
 export default function RootLayout({ children }) {
